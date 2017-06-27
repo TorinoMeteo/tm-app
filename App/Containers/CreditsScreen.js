@@ -16,7 +16,7 @@ class CreditsScreen extends React.Component {
         <ScrollView style={[styles.container, styles.creditsContainer]}>
           <KeyboardAvoidingView behavior='position'>
             <View style={styles.section}>
-              <Text style={[styles.sectionText, styles.versionPar]}>TorinoMeteo v1.1.0.rc-4</Text>
+              <Text style={[styles.sectionText, styles.versionPar]}>TorinoMeteo v1.1.0</Text>
               <Text style={styles.sectionText}>Sviluppata da abidibo</Text>
               <View style={styles.centered}>
                 <TouchableOpacity onPress={() => Communications.web('https://www.abidibo.net', true)}>
