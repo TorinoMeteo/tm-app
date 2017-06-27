@@ -1,11 +1,25 @@
-import React from 'react'
-import { ScrollView, Text, Image, View } from 'react-native'
+import React, { PropTypes } from 'react'
+import { connect } from 'react-redux'
+import * as NavigationService from '../Services/NavigationService'
+import { ScrollView, Text, Image, View, ActivityIndicator } from 'react-native'
 import { Images } from '../Themes'
 
 // Styles
 import styles from './Styles/LaunchScreenStyles'
 
-export default class LaunchScreen extends React.Component {
+const propTypes = {
+  realtime: PropTypes.object.isRequired,
+  forecast: PropTypes.object.isRequired
+}
+
+class LaunchScreen extends React.Component {
+  componentDidUpdate () {
+    if (this.props.realtime.data && this.props.realtime.data.length && this.props.forecast) {
+      console.log('calling MainScreen')
+      NavigationService.resetTo('MainScreen')
+    }
+  }
+
   render () {
     return (
       <View style={styles.mainContainer}>
@@ -15,15 +29,28 @@ export default class LaunchScreen extends React.Component {
             <Image source={Images.launch} style={styles.logo} />
           </View>
 
-          <View style={styles.section} >
-            <Image source={Images.ready} />
-            <Text style={styles.sectionText}>
-              This probably isn't what your app is going to look like. Unless your designer handed you this screen and, in that case, congrats! You're ready to ship. For everyone else, this is where you'll see a live preview of your fully functioning app using Ignite.
-            </Text>
+          <View style={styles.section}>
+            <ActivityIndicator />
+            <Text style={styles.startupPar}>Bentornato!</Text>
           </View>
 
         </ScrollView>
+
+        <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
+          <Image source={Images.ready} style={{ flex: 1, resizeMode: 'stretch' }} />
+        </View>
       </View>
     )
   }
 }
+
+LaunchScreen.propTypes = propTypes
+
+const mapStateToProps = (state) => {
+  return {
+    realtime: state.realtime,
+    forecast: state.forecast
+  }
+}
+
+export default connect(mapStateToProps, null)(LaunchScreen)

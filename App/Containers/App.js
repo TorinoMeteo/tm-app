@@ -4,9 +4,13 @@ import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import RootContainer from './RootContainer'
 import createStore from '../Redux'
+import { initDb } from '../Db'
 
 // create our store
 const store = createStore()
+
+// database initialization
+initDb()
 
 /**
  * Provides an entry point into our application.  Both index.ios.js and index.android.js

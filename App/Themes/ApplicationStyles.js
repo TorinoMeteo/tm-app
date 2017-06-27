@@ -20,7 +20,7 @@ const ApplicationStyles = {
     },
     container: {
       flex: 1,
-      paddingTop: Metrics.baseMargin,
+      paddingTop: 0,
       backgroundColor: Colors.transparent
     },
     section: {
@@ -74,6 +74,16 @@ const ApplicationStyles = {
     borderColor: Colors.ember,
     alignItems: 'center',
     textAlign: 'center'
+  },
+  drawer: {
+    icon: {
+      fontSize: 30,
+      marginLeft: 12
+    }
+  },
+  refreshIcon: {
+    fontSize: 30,
+    marginRight: 12
   }
 }
 

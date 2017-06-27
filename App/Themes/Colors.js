@@ -1,5 +1,7 @@
 const colors = {
+  primary: '#fb5f26',
   background: '#1F0808',
+  launchBg: '#322039',
   clear: 'rgba(0,0,0,0)',
   facebook: '#3b5998',
   transparent: 'rgba(0,0,0,0)',
@@ -13,6 +15,7 @@ const colors = {
   panther: '#161616',
   charcoal: '#595959',
   coal: '#2d2d2d',
+  yellow: '#fff844',
   bloodOrange: '#fb5f26',
   snow: 'white',
   ember: 'rgba(164, 0, 48, 0.5)',
