@@ -13,8 +13,11 @@ import styles from './Styles/CreditsScreenStyle'
 class CreditsScreen extends React.Component {
   render () {
     return (
-      <View style={styles.mainContainer}>
-        <ScrollView style={[styles.container, styles.creditsContainer]}>
+      <View style={[styles.mainContainer, styles.creditsContainer]}>
+        <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
+          <Image source={images.ready} style={{ flex: 1, resizeMode: 'stretch' }} />
+        </View>
+        <ScrollView style={styles.container}>
           <KeyboardAvoidingView behavior='position'>
             <View style={styles.section}>
               <Text style={[styles.sectionText, styles.versionPar]}>TorinoMeteo v1.2.0</Text>
@@ -41,9 +44,6 @@ class CreditsScreen extends React.Component {
             </View>
           </KeyboardAvoidingView>
         </ScrollView>
-        <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
-          <Image source={images.ready} style={{ flex: 1, resizeMode: 'stretch' }} />
-        </View>
       </View>
     )
   }
