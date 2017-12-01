@@ -18,6 +18,9 @@ const ApplicationStyles = {
       bottom: 0,
       right: 0
     },
+    link: {
+      color: '#cd3200'
+    },
     container: {
       flex: 1,
       paddingTop: 0,
@@ -29,6 +32,13 @@ const ApplicationStyles = {
     },
     sectionText: {
       ...Fonts.style.normal,
+      paddingVertical: Metrics.doubleBaseMargin,
+      color: Colors.snow,
+      marginVertical: Metrics.smallMargin,
+      textAlign: 'center'
+    },
+    sectionTextSmall: {
+      ...Fonts.style.small,
       paddingVertical: Metrics.doubleBaseMargin,
       color: Colors.snow,
       marginVertical: Metrics.smallMargin,

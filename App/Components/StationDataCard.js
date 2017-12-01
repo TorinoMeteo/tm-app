@@ -20,9 +20,12 @@ const StationDataCard = (props) => {
         <View style={styles.stationHeader}>
           <Image source={{ uri: data.station.image_url }} style={styles.image} resizeMode='cover' />
           <View style={{ flexWrap: 'wrap', flexDirection: 'column', flex: 0.8 }}>
-            <Text style={[styles.stationTitle, { flexWrap: 'wrap' }]}>
-              {data.station.name}
-            </Text>
+            <View style={{ flexDirection: 'row', marginTop: 10, marginBottom: 10 }}>
+              <Image source={{ uri: data.weather_icon.icon }} style={{ width: 40, marginRight: 10 }} />
+              <Text style={[styles.stationTitle, { flexWrap: 'wrap' }]}>
+                {data.station.name}
+              </Text>
+            </View>
             <Text>{moment(data.datetime).locale('it', itLocale).format('LLL')}</Text>
           </View>
         </View>
@@ -34,13 +37,13 @@ const StationDataCard = (props) => {
         <View style={styles.textContainer}>
           <View style={{ flexDirection: 'row' }}>
             <Text style={{ color: 'red' }} >
-              <FAIcon name='arrow-up' />
+              <FAIcon name='arrow-up' />{' '}
               {data.temperature_max + '°C' + ' ' + data.temperature_max_time.substr(0, 5)}
             </Text>
           </View>
           <View style={{ flexDirection: 'row' }}>
             <Text style={{ color: 'blue' }} >
-              <FAIcon name='arrow-down' />
+              <FAIcon name='arrow-down' />{' '}
               {data.temperature_min + '°C' + ' ' + data.temperature_min_time.substr(0, 5)}
             </Text>
           </View>

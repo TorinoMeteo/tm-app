@@ -83,12 +83,22 @@ class StationDetail extends Component {
       )
     }
 
+    let weatherIconView = null
+    if (data.weather_icon) {
+      weatherIconView = (
+        <View style={{ justifyContent: 'center', flexDirection: 'row', marginTop: 20 }}>
+          <Image source={{ uri: data.weather_icon.icon }} style={{ height: 50, width: 50 }} />
+        </View>
+      )
+    }
+
     return (
       <ScrollView style={{ marginLeft: 16, marginRight: 16, marginTop: 16 }}>
         <View style={styles.dateContainer}>
           <FAIcon name='clock-o' />
           <Text>{' '}{moment(data.datetime).format('LLL')}</Text>
         </View>
+        {weatherIconView}
         <View style={styles.temperatureContainer}>
           <Text style={styles.temperatureData}>{icon('thermometer') + ' ' + data.temperature + '°C' + ' '}</Text>
           <View style={{ flexDirection: 'row' }}>

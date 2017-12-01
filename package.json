@@ -1,6 +1,6 @@
 {
   "name": "TorinoMeteo",
-  "version": "0.0.1",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -38,6 +38,7 @@
     "react-native-config": "^0.2.1",
     "react-native-device-info": "^0.10.0",
     "react-native-drawer": "^2.3.0",
+    "react-native-hr": "^1.1.3",
     "react-native-iconic-font": "^0.0.6",
     "react-native-maps": "0.13.0",
     "react-native-material-ui": "^1.12.0",

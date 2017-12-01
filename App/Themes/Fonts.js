@@ -47,6 +47,10 @@ const style = {
     fontFamily: type.base,
     fontSize: size.regular
   },
+  small: {
+    fontFamily: type.base,
+    fontSize: size.small
+  },
   description: {
     fontFamily: type.base,
     fontSize: size.medium

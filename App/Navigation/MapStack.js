@@ -28,7 +28,7 @@ const MapStack = StackNavigator(
   },
   {
     initialRouteName: 'MapScreen',
-    headerMode: 'screen',
+    headerMode: 'none',
     navigationOptions: ({ navigation }) => ({
       headerTitle: 'Mappa realtime',
       headerStyle: styles.header,

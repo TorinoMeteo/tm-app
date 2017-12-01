@@ -3,6 +3,7 @@ import { View, ScrollView, Text, KeyboardAvoidingView, Image, TouchableOpacity }
 import { connect } from 'react-redux'
 import images from '../Themes/Images'
 import Communications from 'react-native-communications'
+import Hr from 'react-native-hr'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
@@ -16,7 +17,7 @@ class CreditsScreen extends React.Component {
         <ScrollView style={[styles.container, styles.creditsContainer]}>
           <KeyboardAvoidingView behavior='position'>
             <View style={styles.section}>
-              <Text style={[styles.sectionText, styles.versionPar]}>TorinoMeteo v1.1.0</Text>
+              <Text style={[styles.sectionText, styles.versionPar]}>TorinoMeteo v1.2.0</Text>
               <Text style={styles.sectionText}>Sviluppata da abidibo</Text>
               <View style={styles.centered}>
                 <TouchableOpacity onPress={() => Communications.web('https://www.abidibo.net', true)}>
@@ -24,10 +25,18 @@ class CreditsScreen extends React.Component {
                 </TouchableOpacity>
               </View>
               <Text style={styles.sectionText}>grazie all'infinita disponibilità di</Text>
-              <View style={styles.centered}>
+              <View style={[styles.centered, { marginBottom: 30 }]}>
                 <TouchableOpacity onPress={() => Communications.web('https://www.otto.to.it', true)}>
                   <Image source={images.otto} />
                 </TouchableOpacity>
+              </View>
+              <Hr lineColor={'#cd3200'} />
+              <View style={styles.centered}>
+                <Text style={styles.sectionTextSmall}>
+                  <Text>Le icone metereologiche sono prese dalle previsioni meteorologiche di </Text>
+                  <Text style={styles.link} onPress={() => Communications.web('https://www.yr.no/', true)}>Yr</Text>
+                  <Text> fornite da Meteorological Institute e NRK.</Text>
+                </Text>
               </View>
             </View>
           </KeyboardAvoidingView>

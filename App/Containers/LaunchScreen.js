@@ -13,14 +13,20 @@ const propTypes = {
 }
 
 class LaunchScreen extends React.Component {
-  componentDidUpdate () {
+  checkData () {
     if (this.props.realtime.data && this.props.realtime.data.length && this.props.forecast) {
       console.log('calling MainScreen')
       NavigationService.resetTo('MainScreen')
     }
   }
 
+  componentDidUpdate () {
+    this.checkData()
+  }
+
   render () {
+    this.checkData()
+
     return (
       <View style={styles.mainContainer}>
         <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />

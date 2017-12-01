@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import { ListItem } from 'react-native-material-ui'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import * as NavigationService from '../Services/NavigationService'
@@ -37,12 +37,21 @@ export class StationListContainer extends Component {
           } else {
             temperature = obj.temperature + '°'
           }
+
+          let leftElement = (<Text>{temperature}</Text>)
+          if (obj.weather_icon) {
+            leftElement = (
+              <View>
+                <Image source={{ uri: obj.weather_icon.icon }} style={{ height: 40 }} />
+                <Text style={{ textAlign: 'center' }}>{temperature}</Text>
+              </View>
+            )
+          }
+
           return (
             <ListItem
               divider
-              leftElement={
-                <Text>{temperature}</Text>
-              }
+              leftElement={leftElement}
               centerElement={{
                 primaryText: station.name,
                 secondaryText: obj.station.name + ', ' + station.region.name

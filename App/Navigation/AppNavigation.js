@@ -106,6 +106,7 @@ HomeStack.router.getStateForAction = navigateOnce(HomeStack.router.getStateForAc
 SettingsStack.router.getStateForAction = navigateOnce(SettingsStack.router.getStateForAction)
 ForecastStack.router.getStateForAction = navigateOnce(ForecastStack.router.getStateForAction)
 NetStack.router.getStateForAction = navigateOnce(NetStack.router.getStateForAction)
+MapStack.router.getStateForAction = navigateOnce(MapStack.router.getStateForAction)
 WebcamStack.router.getStateForAction = navigateOnce(WebcamStack.router.getStateForAction)
 SettingsStack.router.getStateForAction = navigateOnce(SettingsStack.router.getStateForAction)
 CreditsStack.router.getStateForAction = navigateOnce(CreditsStack.router.getStateForAction)
