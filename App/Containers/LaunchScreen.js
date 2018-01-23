@@ -24,9 +24,11 @@ class LaunchScreen extends React.Component {
     this.checkData()
   }
 
-  render () {
+  componentWillMount () {
     this.checkData()
+  }
 
+  render () {
     return (
       <View style={styles.mainContainer}>
         <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
